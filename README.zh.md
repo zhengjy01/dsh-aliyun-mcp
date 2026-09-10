@@ -4,6 +4,10 @@
 
 > 方案选型：阿里云官方 MCP 有「远程 OAuth」与「本地静态凭证 + Proxy」两种接入；本插件采用后者（无 OAuth 回调，AccessKey 只存在本机 `~/.dsh/dsh-aliyun.json`，0600）。
 
+## 兼容性
+
+要求 **DeepSeek Harness ≥ 0.1.5-rc.1**（已在包清单的 `dsh.engines.dsh` 中声明，DSH 插件市场据此显示兼容版本），并已在 **0.1.5-rc.1** 上实测通过。本构建包含 DSH 0.1.5 的适配：工具结果的严格校验契约（lossless-JSON 快照、`additionalProperties: false` 的 schema 校验、`output.render` 必须返回 `ContentBlock[]`），以及不依赖宿主 PATH 的可执行文件解析（launchd 托管的宿主 `PATH` 只有 `/usr/bin:/bin`）。
+
 ## 前置条件
 
 1. **本机安装 uv**（用于运行官方 MCP Proxy）：`brew install uv`

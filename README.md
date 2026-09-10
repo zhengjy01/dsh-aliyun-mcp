@@ -2,6 +2,10 @@
 
 Connects the official Alibaba Cloud **OpenAPI MCP Server** to DeepSeek Harness: enter an AccessKey (RAM sub-account recommended), the plugin runs the official **Alibaba Cloud MCP Proxy** (`uvx alibabacloud.mcp-proxy`) locally to exchange the static credentials for a bearer token, and registers the upstream tools under `mcp__aliyun__*` — covering ECS / OSS / domains / DNS / Function Compute and tens of thousands of Alibaba Cloud OpenAPIs.
 
+## Compatibility
+
+Requires **DeepSeek Harness ≥ 0.1.5-rc.1** (declared as `dsh.engines.dsh` in the package manifest, so the DSH plugin marketplace can report it) and is verified against **0.1.5-rc.1**. This build carries the DSH 0.1.5 adaptations: the strict tool-result contract (lossless-JSON snapshot, `additionalProperties: false` schema validation, and `output.render` returning `ContentBlock[]`) plus executable resolution that survives a launchd-started host whose `PATH` is only `/usr/bin:/bin`.
+
 ## Prerequisites
 
 1. Install `uv` locally: `brew install uv`

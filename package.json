@@ -1,6 +1,6 @@
 {
   "name": "dsh-aliyun-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Alibaba Cloud MCP connection for DeepSeek Harness: static AccessKey credentials + local Alibaba Cloud MCP Proxy (uvx alibabacloud.mcp-proxy) connecting to the official OpenAPI MCP Server, with tools under mcp__aliyun__* and a web settings panel",
   "type": "module",
   "main": "lib/index.js",
@@ -20,6 +20,9 @@
         "@deepseek-ai/dsh-client-ui-settings"
       ],
       "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.1.5-rc.1"
     }
   },
   "files": [
