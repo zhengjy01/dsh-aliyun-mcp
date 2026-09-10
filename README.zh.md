@@ -1,4 +1,4 @@
-# dsh-aliyun — 阿里云 MCP 连接（静态凭证方案）
+# dsh-aliyun-mcp — 阿里云 MCP 连接（静态凭证方案）
 
 把阿里云官方 **OpenAPI MCP Server** 接入 DeepSeek Harness：填入 AccessKey（推荐 RAM 子账号），插件通过本地 **Alibaba Cloud MCP Proxy**（`uvx alibabacloud.mcp-proxy`）自动换取令牌并连接上游，工具以 `mcp__aliyun__*` 暴露给 agent，覆盖 ECS / OSS / 域名 / DNS / 函数计算等阿里云数万个 OpenAPI。
 
@@ -12,7 +12,7 @@
 ## 安装
 
 ```sh
-dsh plugin --profile web add link:/path/to/dsh-aliyun
+dsh plugin --profile web add link:/path/to/dsh-aliyun-mcp
 # 重启 dsh web 生效
 ```
 

@@ -1,4 +1,4 @@
-# dsh-aliyun — Alibaba Cloud MCP connection (static-credential mode)
+# dsh-aliyun-mcp — Alibaba Cloud MCP connection (static-credential mode)
 
 Connects the official Alibaba Cloud **OpenAPI MCP Server** to DeepSeek Harness: enter an AccessKey (RAM sub-account recommended), the plugin runs the official **Alibaba Cloud MCP Proxy** (`uvx alibabacloud.mcp-proxy`) locally to exchange the static credentials for a bearer token, and registers the upstream tools under `mcp__aliyun__*` — covering ECS / OSS / domains / DNS / Function Compute and tens of thousands of Alibaba Cloud OpenAPIs.
 
@@ -10,7 +10,7 @@ Connects the official Alibaba Cloud **OpenAPI MCP Server** to DeepSeek Harness: 
 ## Install
 
 ```sh
-dsh plugin --profile web add link:/path/to/dsh-aliyun
+dsh plugin --profile web add link:/path/to/dsh-aliyun-mcp
 # restart dsh web to apply
 ```
 

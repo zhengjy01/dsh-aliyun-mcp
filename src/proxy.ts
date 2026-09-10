@@ -21,6 +21,7 @@ import { ListToolsResultSchema, ToolListChangedNotificationSchema } from '@model
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js'
 import type { Context } from '@deepseek-ai/cordis'
 import type { AliyunCredentials, AliyunStore } from './store.ts'
+import { extendedPath } from './child-env.ts'
 
 /** Raw call result record: the bridge owns JSON-value validation after transport. */
 const RawCallToolResultSchema = z.record(z.string(), z.unknown())
@@ -241,6 +242,8 @@ export function createSupervisor(ctx: Context, store: AliyunStore): McpSuperviso
   function proxyEnv(cfg: AliyunCredentials): Record<string, string> {
     const env: Record<string, string> = {
       ...(process.env as Record<string, string>),
+      // A launchd-started DSH has only /usr/bin:/bin, which hides uvx.
+      PATH: extendedPath(),
       ALIBABA_CLOUD_ACCESS_KEY_ID: cfg.accessKeyId,
       ALIBABA_CLOUD_ACCESS_KEY_SECRET: cfg.accessKeySecret,
     }
