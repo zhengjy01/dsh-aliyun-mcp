@@ -10,6 +10,10 @@ Connects the official Alibaba Cloud **OpenAPI MCP Server** to DeepSeek Harness: 
 ## Install
 
 ```sh
+# from npm (published package)
+dsh plugin --profile web add dsh-aliyun-mcp
+
+# or local development
 dsh plugin --profile web add link:/path/to/dsh-aliyun-mcp
 # restart dsh web to apply
 ```
